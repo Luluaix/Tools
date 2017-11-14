@@ -1,6 +1,6 @@
 void *mlx_init()
 	Etablie la connection entre le programme et le serveur graphique
-retourne NULL si fails
+	retourne NULL si fails
 sinon un pointeur vers la connection.
 
 -	mlx_new_window	cree une fenetre
