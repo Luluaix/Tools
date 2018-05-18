@@ -1,0 +1,32 @@
+# BACKUP
+
+	backup database
+		cf - mysql file
+			daily backup of the database
+	backup website
+		cf - git file
+			daily push with date as a commit
+			daily bundle
+	upload bundle and sql file
+
+	## check configuration on another machine
+	## set the script
+	## change folders to backup folders for git database.sql and git bundle
+
+
+# CLEANING
+
+	## compare curent install of wordpress with original
+	## compare curent install of bitnami with original
+	## check useless plugins
+	## check database
+
+
+# DEV ORGANISATION
+
+	## think about a way to share the bundle
+	## trust issues ?
+
+# GIT
+
+	## set gitignore

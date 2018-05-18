@@ -1,0 +1,18 @@
+# Time & Date
+	TIME=`date '+%H:%M:%S'`
+	DATE=`date '+%Y_%m_%d'`
+
+# backup the database
+	mysqldump -u bn_wordpress -p96f12c63a8 bitnami_wordpress > $BACKUP.sql
+
+# diff
+	diff -y --suppress-common-lines file1 file2
+	diff -r -x .git -x wp-snapshots --suppress-common-lines rep1 rep2
+
+# crontab // plan things daily / hourly / reboot etc ...
+	## list tasks
+		crontab -l
+	## create task every 10 min
+		crontab -e
+			*/10 * * * * sh /home/bitnami/test_folder/test.sh
+			0 4 * * 1

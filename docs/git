@@ -1,0 +1,26 @@
+# Set .gitignore etc ..
+
+
+# Create a local git repository
+
+	## Set repository in an other folder ~/something or /something/...
+		git init --bare .project
+
+	## init the htdocs folder
+		git init
+		git remote add origin ../.project
+		git add .
+		git commit -m "first commit"
+		git push -u origin master
+
+# Create a git file of the git repository
+	## Set repository in an other folder and name the file with date
+		git bundle create ../bundle.git master
+	## Command to clone the bundle
+		git clone -b master bundle.git repos
+
+# ignore corefile modification in git
+ 	git config core.filemode false
+
+# diff ignoring corefile modification
+	git diff -G. remote website

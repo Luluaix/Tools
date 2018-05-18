@@ -1,0 +1,15 @@
+# backup the database
+	BACKUP=`date '+%Y_%m_%d_db_backup.sql'`
+	mysqldump -u bn_wordpress -p96f12c63a8 bitnami_wordpress > $BACKUP
+
+# mysql with MAMP
+	## launch mysql
+		/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
+	## delete database
+		/Applications/MAMP/Library/bin/mysqladmin --host=localhost -uroot -proot drop database_name
+
+# mysql
+	# create new empty database
+		CREATE DATABASE bitnami_wordpress;
+	# import database
+		mysql -u root -proot bitnami_wordpress < db.sql

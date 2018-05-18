@@ -1,0 +1,18 @@
+# Connect via SSH to the bitnami Server
+#	First, make sure you have a ssh-key (see apache file)
+	##	Secure the ssh-key file
+		chmod 600 ssh-key
+	##	Add your key to google cloud platform -> sellcrowd -> instance VM ->
+	##	Edit -> add item in SSH KEY
+	##	Make sure you key start with the ssh-rsa and finish with bitnami instead
+	##	of your login
+	##	Connect to the server
+		ssh -i ~/.ssh/ssh-key bitnami@sellcrowd.com.au
+
+# SSH
+	## 	to restart the server
+		sudo /etc/init.d/ssh restart
+	##	Generate an ssh key
+		ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+	##	Make sure that the file rights are 600
+	##	add the key 

@@ -1,0 +1,37 @@
+# Configurer SSL en local
+	cd /Applications/MAMP/conf/apache
+
+# generer la cle et le certificat
+	openssl genrsa -out /Applications/MAMP/conf/apache ssl.key 2048
+	openssl req -new -x509 -key /Applications/MAMP/conf/apache/ssl.key -out /Applications/MAMP/htdocs/ssl.crt -days 3650 -subj /CN=localhost
+
+# accepter le certificat
+	sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /Applications/MAMP/conf/apache/ssl.crt
+
+# Configuer httdp.conf
+
+	## Decommenter ces deux lignes
+		LoadModule ssl_module modules/mod_ssl.so
+		Include /Applications/MAMP/conf/apache/extra/httpd-ssl.conf
+	## modifier
+		Servername  localhost:443
+
+# Configurer httpd-ssl.conf
+	<VirtualHost *:443>
+# General setup for the virtual host
+	DocumentRoot “/Applications/MAMP/htdocs”
+	ServerName localhost
+	ServerAdmin you@example.com
+	ErrorLog “/Applications/MAMP/Library/logs/error_log”
+	TransferLog “/Applications/MAMP/Library/logs/access_log”
+
+# SSL Engine Switch:
+# Enable/Disable SSL for this virtual host.
+	SSLEngine on
+
+	SSLCertificateFile "/Applications/MAMP/conf/apache/ssl.crt"
+	SSLCertificateKeyFile “//Applications/MAMP/conf/apache/server.key”
+
+# Autoriser le certificat dans chrome
+# https://alexanderzeitler.com/articles/Fixing-Chrome-missing_subjectAltName-selfsigned-cert-openssl/
+	chrome://flags/#allow-insecure-localhost
