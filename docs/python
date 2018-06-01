@@ -1,0 +1,3 @@
+# work on a virtual environement
+	python3 -m venv <DIR>
+	source <DIR>/bin/activate
