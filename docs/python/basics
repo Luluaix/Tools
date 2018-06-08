@@ -1,0 +1,159 @@
+print("affiche le texte. fonctionne comme printf (%d, %s, %f)")
+
+input("")
+    reagit de la meme maniere que print, mais retourne l entree clavier sous
+    forme de string
+
+# commentaire
+''' commentaire sur plusieurs lignes '''
+""" format permettant de garder la mise en page """
+
+# structures du code, compare au C
+
+;   -> \n
+{}  -> indentation
+
+# operateurs
+
+{}	Dictionnaire
+()	Argument
+[]	Partie (opérateur d'indiçage)
+.	Attribut
+**	Puissance
+~	inversion de bit
++	Positif
+-	Négatif
+*	Multiplier
+/	Diviser
+//	Résultat entier d'une division
+%	Modulo
++ 	Plus
+- 	Moins
+<<	Décalage à gauche
+>>	Décalage à droite
+&	et logique
+^	ou exclusif
+|	ou logique
+<	inférieur
+>	supérieur
+<=	inférieur ou égal
+>=	supérieur ou égal
+==	est égal
+!=	est différent
+is	est
+in	appartient
+not	non booléen
+and	et booléen
+or	ou booléen
+lambda	expression lambda
+
+# Les types
+
+int	    Nombre entier optimisé
+long	Nombre entier de taille arbitraire
+float	Nombre à virgule flottante
+complex	Nombre complexe
+str	    Chaîne de caractère
+unicode	Chaîne de caractère unicode
+tuple	Liste de longueur fixe
+list	Liste de longueur variable
+dict	dictionnaire
+file	Fichier
+bool	Booléen
+NoneType        	Absence de type
+NotImplementedType	Absence d'implementation
+function        	fonction
+module	            module
+
+# Conversion de types
+
+int()   : permet de modifier une variable en entier. Provoque une erreur si cela n'est pas possible.
+long()  : transforme une valeur en long.
+str()   : permet de transformer la plupart des variables d'un autre type en chaînes de caractère.
+float() : permet la transformation en flottant.
+repr()  : similaire à "str". Voir la partie sur les objets
+eval()  : évalue le contenu de son argument comme si c'était du code Python.
+split() : sépare une chaine en liste.
+join()  : transforme une liste en chaine, dont le séparateur est en préfixe (" ".join(MaListe)).
+
+datetime.strptime('20170727222900', '%Y%m%d%H%M%S') : change une chaine en date.
+maDate.strftime('%Y%m%d%H%M%S') : change une date en chaine.
+
+# strings = exemple
+
+string[1:5] -> xempl
+string[:-1] -> exempl
+string[1:]  -> xemple
+
+startswith() // endswith()
+.index("string ou caractere")   retrouve l index de la premiere occurence   plante si faux
+.find("string")     cherche en partant du debut                             renvoie -1 si pas trouve
+.rfind("string")    cherche en partant de la fin
+.count("string")    compte le nombre d occurences
+.lower()
+.upper()
+.capitalize()       premiere lettre
+.swapcase()         inverse les maj / min
+.strip(c)            enleve les espace ou 'c' en debut et fin de ligne
+.replace(old, new)
+
+# listes
+
+.sort()
+.append()   ajoute a la fin
+.reverse()
+.index()
+.remove()
+
+.split()        -> converti une string en liste de sub strings
+.join(liste)    -> converti une liste en chaine
+.pop()          -> retire et renvois l index
+
+len(liste)
+del(liste[index:])
+min(liste)
+max(liste)
+range(deb, fin, interval) -> cree facilement une etendu de nombres
+
+
+# dictionnaire, objets (a test en mode case)
+
+.keys()
+.values()
+.has_key()
+.items()    extrait du dictionnaire une liste equivalente de tuples
+.copy()     copie l element
+.add()
+.update(var)    concatene
+.remove()       erreur si pas de correspondance
+.discard()      sans erreur si pas de corespondance
+
+
+#   imports
+
+random       -> lib permettant de generer differentes chose random
+datetime     -> lib de dates sous differents formats
+
+# les ensembles : set()
+
+set1 = {'cat', 'dog'}       set2 = {'mouse', 'dog'}
+
+Intersection          = {'dog'}                   set1 & set2
+Union                 = {'cat', 'mouse', 'dog'}   set1 | set2
+Difference            = {'cat'}                   set1 - set2
+Difference symetrique = {'cat', 'mouse'}          set1 ^ set2
+
+.clear()
+
+# les modules standard
+
+cgi
+math
+os
+pickle
+random
+re          library regex
+socket
+sys
+time
+urllib
