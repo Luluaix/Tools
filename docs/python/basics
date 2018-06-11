@@ -157,3 +157,32 @@ socket
 sys
 time
 urllib
+
+# gestion de fichiers
+open(filename, [option])
+    r       read    | ouvre le fichier en lecture
+    w       write   | creer un fichier (s il existe deja, le supprime au prealable)
+    a       append  | ajoute a la fin du fichier
+close()
+write()
+readline()  retourne la ligne
+readlines() retourne une chaine de lignes
+
+    ## modifier le path de recherche du fichier a inserer
+import os
+    chdir("/home/whatever")     changes current dirrectory
+    getcwd()                    get current working repository
+    ## lib pickle
+.dump(var, file)    cree les variables
+.load(file)         recupere les data et les charge dans les variable en modifiant le type
+
+
+# gestion d erreur
+
+try:
+	# Code pouvant générer une exception
+except MonException:
+	# Code en cas d'exception
+else:
+	# Code en cas de non exception
+#code dans tous les cas
