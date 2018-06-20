@@ -14,5 +14,5 @@
 		crontab -l
 	## create task every 10 min
 		crontab -e
-			*/10 * * * * sh /home/bitnami/test_folder/test.sh
+			* */1 * * * sh /home/bitnami/test_folder/test.sh
 			0 4 * * 1

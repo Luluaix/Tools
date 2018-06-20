@@ -1,0 +1,2 @@
+## Creer un virtual environement avec tous les packages
+    conda create -n cloud python=x.x anaconda
